@@ -1,5 +1,6 @@
 package com.ynov.biblio.com.ynov.biblio.config;
 
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
@@ -15,7 +16,7 @@ public class AppConfiguration {
         return ds;
 	}
 	
-	
+	@Bean(name = "applicationJdbcTemplate")
 	public JdbcTemplate applicationDataConnection() {
 		return new JdbcTemplate(providerSource());
 	}
